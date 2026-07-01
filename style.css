@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#4facfe,#00c6fb);
+    transition:.6s;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:420px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(15px);
+    color:#fff;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.search{
+    display:flex;
+    gap:12px;
+}
+
+.inputbox{
+    flex:1;
+    height:55px;
+    border:none;
+    outline:none;
+    border-radius:30px;
+    padding:0 20px;
+    font-size:16px;
+}
+
+.btn{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#fff;
+    cursor:pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn img{
+    width:22px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.weather{
+    text-align:center;
+    margin-top:30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.weather-icon{
+    width:150px;
+}
+
+.temp{
+    font-size:75px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.city{
+    font-size:34px;
+    margin-top:8px;
+}
+
+.condition{
+    margin-top:8px;
+    font-size:20px;
+    color:#f5f5f5;
+}
+
+.details{
+    margin-top:35px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.col{
+    width:48%;
+    background:rgba(255,255,255,.15);
+    border-radius:18px;
+    padding:15px;
+    display:flex;
+    align-items:center;
+}
+
+.col img{
+    width:40px;
+    margin-right:12px;
+}
+
+.col h3{
+    font-size:22px;
+}
+
+.col span{
+    font-size:14px;
+}
+
+.error{
+    color:#fff;
+    margin-top:20px;
+    text-align:center;
+    font-size:18px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Class to make elements visible with animation */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Weather Themes */
+
+body.clear{
+    background:linear-gradient(135deg,#36d1dc,#5b86e5);
+}
+
+body.clouds{
+    background:linear-gradient(135deg,#667db6,#8e9eab);
+}
+
+body.rain{
+    background:linear-gradient(135deg,#232526,#414345);
+}
+
+body.drizzle{
+    background:linear-gradient(135deg,#4CA1AF,#2C3E50);
+}
+
+body.mist{
+    background:linear-gradient(135deg,#757F9A,#D7DDE8);
+}
+
+body.snow{
+    background:linear-gradient(135deg,#E6DADA,#274046);
+}
