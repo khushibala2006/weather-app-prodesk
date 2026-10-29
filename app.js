@@ -1,12 +1,9 @@
-/**
- * NOTE: Storing API keys in client-side code is a security risk.
- * For a production application, this key should be moved to a server-side proxy.
- */
+
 const weatherApp = {
     apiKey: "d05b1498283f299b578082db4c13942e",
     apiBaseUrl: "https://api.openweathermap.org/data/2.5/weather",
 
-    // Cache DOM elements for better performance
+
     elements: {
         searchBox: document.querySelector(".search input"),
         searchBtn: document.querySelector(".search button"),
@@ -24,7 +21,7 @@ const weatherApp = {
 
     init() {
         this.addEventListeners();
-        this.getLocationWeather(); // Fetch weather on page load
+        this.getLocationWeather(); 
     },
 
     addEventListeners() {
@@ -93,11 +90,9 @@ const weatherApp = {
         this.elements.windDisplay.innerHTML = data.wind.speed + " km/h";
         this.elements.conditionDisplay.innerHTML = data.weather[0].description.replace(/\b\w/g, char => char.toUpperCase());
 
-        // Since only one image is available, we use it for all conditions.
-        // The 'switch' statement is removed as it's no longer needed.
+
         this.elements.weatherIcon.src = "images.jpeg";
 
-        // Set background based on weather
         const weatherCondition = data.weather[0].main.toLowerCase();
         document.body.className = weatherCondition;
 
@@ -105,7 +100,7 @@ const weatherApp = {
     },
 
     setUIState(state, message = "") {
-        // Hide all dynamic sections before showing the correct one
+
         this.elements.loader.style.display = "none";
         this.elements.weatherDisplay.classList.remove("visible");
         this.elements.errorDisplay.classList.remove("visible");
